@@ -16,15 +16,17 @@ interface PizzaListProps {
 const Pizza: React.FC<PizzaListProps> = ({ pizzaDatas }) => {
   console.log(pizzaDatas);
   return (
-    <>
+    <div className="pizzas">
       {pizzaDatas.map((pizzaData: PizzasProps) => (
-        <div key={pizzaData.id}>
-          <h2>{pizzaData.name}</h2>
-          <img src={pizzaData.photoName} alt={pizzaData.name} />
-          <p>{pizzaData.ingredients}</p>
+        <div className="pizza" key={pizzaData.id}>
+          <div>
+            <h3>{pizzaData.name}</h3>
+            <img src={pizzaData.photoName} alt={pizzaData.name} />
+            <p>{pizzaData.ingredients}</p>
+          </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
